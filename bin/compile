@@ -141,9 +141,9 @@ if is_sbt_native_packager $BUILD_DIR || is_play $BUILD_DIR; then
     echo "-----> Dropping ivy cache from the slug"
     rm -rf $SBT_USER_HOME/.ivy2
   fi
-  if [ -d $SBT_USER_HOME/.jdk/jre ]; then
+  if [ -d $BUILD_DIR/.jdk/jre ]; then
       echo "-----> Dropping jre from the slug"
-      rm -rf $SBT_USER_HOME/.jdk/jre
+      rm -rf $BUILD_DIR/.jdk/jre
   fi
   if [ -d $BUILD_DIR/project/boot ] ; then
     echo "-----> Dropping project boot dir from the slug"
